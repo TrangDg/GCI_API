@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} {{ ID }} {% endblock %}
+{% block body %}
+ <h1>Sorry :(</h1>
+ 	<p>What you were looking for is just not there. <b>Please check the spelling if URL is manually entered!</b>
+ 	<p>OR
+ 	<p>Currently your requested content-type is not supported. Please consider the following suggestions:
+ 	<ul>
+ 		<li><a href="{{ url_for('sample_html', ID=ID) }}">HTML</a>
+ 		<li><a href="{{ url_for('sample_json', ID=ID) }}">JSON</a>
+ 	</ul>
+{% endblock %}
