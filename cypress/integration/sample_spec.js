@@ -1,5 +1,5 @@
 describe('Testing GCI API', function() {
-	it('Visits homepage', function() {
+	it('Visit homepage', function() {
 		cy.visit('/')
 
 		cy.contains('GCI sample reference data')
