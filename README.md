@@ -15,6 +15,7 @@ Flask code set up the server and running API.
   * export FLASK_APP=app.py
   * export FLASK_ENV=development
   * flask run
+
 *Notes*: Currently, user can request the data for each sample by manually entered the sample ID to the url, i.e. 'localhost:port/gci/<sample_ID>'. JSON data is not stored on disk. Instead, each time a sample_ID is called, the app will process the mapping. 
   * When user only enters the ID without extension (.html or .json), user will be redirected to the url '/gci/<ID>.html' or '/gci/<ID>.json', depending on the requested content-type. However, if the requested content-type is not supported, e.g. 'application/pdf', the app will display 'format_suggest.html', including the links to HTML and JSON formats. 
   * HTML page only displays the sample label for now.
@@ -31,7 +32,8 @@ The testing code 'sample_spec.js' can be found in /cypress/integration, includin
    Testing the links to the sample's html and json 
 3. Testing typo:
   * For now, the 'format_suggest.html' contains both the warning for the url typo as well as unsupported content type. However, if it's a typo, clicking on either HTML or JSON links should return the 404 error page. <Working on separating the 2 different errors>
-  	*Notes*: the above tests also works when user enters url with extensions. 
+
+*Notes*: the above tests also works when user enters url with extensions. 
 
 
 
