@@ -10,15 +10,12 @@ in folder '../data'.
 #### app.py
 
 Flask code set up the server and running API. To run the code:
-* Create virtual environment python3 -m venv ENV
-* Activate virtual environment source ENV/bin/activate
-* Install with pip: flask, cromulent, dateparser. $ pip install <package>
-* To run flask, execute these command lines:
-  * export FLASK_APP=app.py
-  * export FLASK_ENV=development
-  * flask run
+* Install with pipenv: flask, cromulent, dateparser. $ pip install <package>
+  Pipenv automatically creates and manages a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages (*Sources*: [pipenv](https://pipenv.readthedocs.io/en/latest/#)). Instruction for installing pipenv can be found [here](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv). 
+* Environment variables can be found in the *.env* file. This will be automatically loaded once flask is run through pipenv. 
+* To run flask, use the command line: $ pipenv run flask run
 
-*Notes*: Currently, user can request the data for each sample by manually entered the sample ID to the url, i.e. 'localhost:port/gci/<sample_ID>'. JSON data is not stored on disk. Instead, each time a sample_ID is called, the app will process the mapping. 
+*Notes*: Currently, user can request the data for each sample by manually entered the sample ID to the url, i.e. 'your_localhost:the_port/gci/<sample_ID>'. JSON data is not stored on disk. Instead, each time a sample_ID is called, the app will process the mapping. 
   * When user only enters the ID without extension (.html or .json), user will be redirected to the url '/gci/<ID>.html' or '/gci/<ID>.json', depending on the requested content-type. However, if the requested content-type is not supported, e.g. 'application/pdf', the app will display 'format_suggest.html', including the links to HTML and JSON formats. 
   * HTML page only displays the sample label for now.
   * JSON page displays the string format of the json data.
